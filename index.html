@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<title>Linear Algebra</title>
+<meta charset="utf-8">
+<link rel="icon" href="data:;base64,="> <!-- Prevent request to favicon -->
+<script src="https://unpkg.com/mathjs/dist/math.min.js"></script>
+<script src="mathjs.shim.js"></script>
+
+<p>In the console, you can now use simple linear algebra based on Javascript Array</p>
+<code>[1, 2, 3].dot([4, 5, 6])</code>
+<p>Available functions:</p>
+<ul id="functions">
+</ul>
+
+<script>
+  window.onload = () => {
+    const list = document.getElementById('functions');
+    const functions = window.f.reduce((acc, value) => {
+      acc += `<li><code>${value.name}</code></li>`;
+      return acc;
+    }, '');
+    list.innerHTML = functions;
+  };
+</script>
