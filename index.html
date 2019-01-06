@@ -14,7 +14,7 @@
 <script>
   window.onload = () => {
     const list = document.getElementById('functions');
-    const functions = window.f.reduce((acc, value) => {
+    const functions = window.math.shims.reduce((acc, value) => {
       acc += `<li><code>${value.name}</code></li>`;
       return acc;
     }, '');

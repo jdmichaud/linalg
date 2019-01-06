@@ -1,4 +1,4 @@
-window.mathjs.shims = [{
+window.math.shims = [{
   name: 'add',
   fun: math.add,
 }, {
@@ -38,6 +38,7 @@ window.mathjs.shims = [{
   name: 'neg',
   fun: function (v) {
     return math.multiply(v, -1);
+  }
 }, {
   name: 'angle',
   fun: function (lhs, rhs) {
@@ -45,7 +46,7 @@ window.mathjs.shims = [{
   }
 }];
 
-window.mathjs.shims.forEach(({name, fun}) => {
+window.math.shims.forEach(({name, fun}) => {
   if (Array.prototype[name] === undefined) {
     Array.prototype[name] = function (arguments) {
       if (arguments !== undefined) {
