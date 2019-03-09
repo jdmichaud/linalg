@@ -44,6 +44,9 @@ window.math.shims = [{
   fun: function (lhs, rhs) {
     return Math.acos(lhs.normalize().dot(rhs.normalize()));
   }
+}, {
+  name: 'eig',
+  fun: numeric.eig,
 }];
 
 window.math.shims.forEach(({name, fun}) => {
