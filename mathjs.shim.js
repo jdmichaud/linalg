@@ -44,10 +44,14 @@ window.math.shims = [{
   fun: function (lhs, rhs) {
     return Math.acos(lhs.normalize().dot(rhs.normalize()));
   }
-}, {
-  name: 'eig',
-  fun: numeric.eig,
 }];
+
+if (numeric !== undefined) {
+  window.math.shims.push({
+    name: 'eig',
+    fun: numeric.eig,
+  });
+}
 
 window.math.shims.forEach(({name, fun}) => {
   if (Array.prototype[name] === undefined) {
