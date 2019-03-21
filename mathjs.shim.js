@@ -47,10 +47,13 @@ window.math.shims = [{
 }];
 
 if (numeric !== undefined) {
-  window.math.shims.push({
+  [{
     name: 'eig',
     fun: numeric.eig,
-  });
+  }, {
+    name: 'svd',
+    fun: numeric.svd,
+  }].forEach(numericjsFun => window.math.shims.push(numericjsFun));
 }
 
 window.math.shims.forEach(({name, fun}) => {
